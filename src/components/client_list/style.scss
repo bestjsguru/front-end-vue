@@ -1,0 +1,174 @@
+#clients {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+
+  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background: linear-gradient(#d5d5d5, white, #f2f2f2);
+    color: black;
+    text-align: center;
+  }
+
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+
+    > .fa-trash {
+      margin-right: 12px;
+    }
+
+    p {
+      width: 100px;
+      margin-bottom: 0;
+      text-align: left;
+      margin-left: 17px;
+    }
+  }
+
+  tr {
+
+    &:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}
+
+.header {
+  width: 80%;
+  height: 100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+
+  .title {
+    text-align: left;
+    font-size: 30px;
+    background-color: transparent;
+    flex: 1;
+    margin-left: 50px;
+    color: #5098a9;
+  }
+
+  .add-button {
+    width: 130px;
+    height: 40px;
+    font-size: 18px;
+    margin-right: 50px;
+  } 
+}
+
+button:focus {
+  outline: none;
+}
+
+.red {
+  text-decoration: underline;
+  color: red;
+}
+
+.rounded {
+  width: 130px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(white, white, #dadada);
+}
+
+.modal-dialog {
+  max-width: 800px;
+}
+
+.modal-footer {
+  display: none;
+}
+
+.modal-title {
+  font-size: 30px;
+  color: #5098a9;
+}
+
+.hide {
+  display: none;
+}
+
+.edit-cancel {
+  margin-left: 330px;
+
+  &.add {
+    margin-left: 480px;
+  }
+}
+
+.delete-button {
+  background: linear-gradient(#e94f4f, rgb(225, 115, 115), #ee0808);
+  color: white;
+}
+
+.item {
+  margin-bottom: 17px;
+
+  > label {
+    font-size: 16px;
+    font-weight: 800;
+    width: 90px;
+    margin-left: auto;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  > input {
+    width: 400px;
+    height: 40px;
+
+    &.provider {
+      width: 265px;
+      margin-right: 5px;
+    }
+  }
+
+  > .right {
+    margin-right: auto;
+  }
+}
+
+.provider-table {
+
+  *{
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  
+  > table {
+    width: 265px;
+    border: 1px solid #d0d0d0;
+    margin-left: 237px;
+    text-align: left;
+
+    .editor-provider {
+      width: 120px;
+    }
+    
+    .check-box {
+      width: 20px;
+      margin-left: 5px;
+    }
+  }
+}
+
+
+
+
+
+
