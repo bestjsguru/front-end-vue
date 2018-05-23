@@ -2,7 +2,7 @@
   <div>
     <div class="header">
       <p class="title">
-        Clinets
+        Clients
       </p>
       <b-btn class="rounded add-button" v-on:click="clearData" v-b-modal.modal1>New Client</b-btn>
     </div>
