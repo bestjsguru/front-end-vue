@@ -160,6 +160,7 @@
         this.isEditing = index;
       },
       editClient: function(event) {
+        this.updateProviders();
         event.preventDefault();
 
         if (!this.clientInfo.name) {
@@ -261,6 +262,11 @@
 
           const diff = _.difference(client.providers, this.allProviders.map(item => item._id));
           this.allData[index].providers = _.difference (client.providers, diff);
+
+          service.rest('client/' + this.allData[index]._id, 'put', this.allData[index])
+          .then(response => {
+
+          });
         });
       },
       onClickAddProvider: function() {
