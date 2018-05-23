@@ -144,6 +144,12 @@
         );
         return item ? true : false;
       },
+      searchProviderNameToAdd: function(name) {
+        const item = this.allProviders.find(
+          provider => provider.name === name
+        );
+        return item ? true : false;
+      },
       getProviderNameWithId: function(providerId) {
         const currentProvider = this.allProviders.find(
           provider => provider._id === providerId
@@ -263,6 +269,12 @@
           return;
         }
 
+        if(this.searchProviderNameToAdd(this.providerName)) {
+          alert ("This provider exists! Input anoter name.");
+          this.providerName = '';
+          return;
+        }
+
         const params = {
           name: this.providerName
         }
@@ -278,7 +290,26 @@
         this.providerName = '';
       },
       onEndEditingProvider: function(index) {
+        if(this.isEditing === -1) return;
         this.isEditing = -1;
+
+        let searchResult = false;
+        this.allProviders.forEach((item, idx) => {
+          if (index !== idx && item.name === this.allProviders[index].name) {
+            searchResult = true;
+          }        
+        });
+
+        if (searchResult) {
+          service.rest('providers', 'get')
+          .then(response => {
+            this.allProviders = response;
+            alert('It should be different from others.');
+            return;
+          });
+          return;
+        }
+
         service.rest('provider/' + this.allProviders[index]._id, 'put', this.allProviders[index])
         .then(response => {
 
